@@ -28,7 +28,7 @@ The architecture is broken down into three distinct, highly optimized phases:
 
 1. **Domain-Adaptive Embedding Fine-Tuning (`bert.py`):** We take `Bio_ClinicalBERT` and fine-tune it directly on our orthopaedic corpus using `MultipleNegativesRankingLoss`. This teaches the retriever the subtle differences in specific orthopaedic terminology.
 2. **Parameter-Efficient LLM Tuning (`llm_lora.py`):** Instead of utilizing a massive GPU-heavy model, we take `google/flan-t5-small` and fine-tune it using Low-Rank Adaptation (LoRA). This allows the model to learn medical instruction-following while only updating a fraction of its weights.
-3. **Smart Context Retrieval (`SemSearch.py` / `OrthoSearch.py`):** User queries are embedded and compared against a local Chroma vector database. The top-k documents are retrieved, formatted into a strict 1,200-character context window, and passed to the LoRA-adapted FLAN-T5 model to generate the final synthesized clinical answer.
+3. **Smart Context Retrieval (`SemSearch.py`):** User queries are embedded and compared against a local Chroma vector database. The top-k documents are retrieved, formatted into a strict 1,200-character context window, and passed to the LoRA-adapted FLAN-T5 model to generate the final synthesized clinical answer.
 
 ## 5. Results & Evaluation
 
