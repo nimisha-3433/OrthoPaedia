@@ -1,6 +1,6 @@
 # Orthopaedic Clinical RAG Pipeline 
 
-## 1. A Brief of the Project
+## 1. Project Brief
 
 General-purpose Large Language Models (LLMs) frequently hallucinate when asked highly specific medical questions. This project solves that problem by implementing a domain-specific **Retrieval-Augmented Generation (RAG)** pipeline dedicated to orthopaedics.
 
